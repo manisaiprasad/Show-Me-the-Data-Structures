@@ -26,9 +26,17 @@ def find_files(suffix, path):
 			output.append(item_path)
 	return output
 
-#  testing
+#  Testing
 print("Test:")
 print(find_files('.c', './testdir'))
 
+
+# Prints every file
+print("Test 2")
+print(find_files('', './Problem 2/testdir'))
+
+# Non existent extension
+print("Test 3")
+print(find_files('.z', './Problem 2/testdir'))
 
 

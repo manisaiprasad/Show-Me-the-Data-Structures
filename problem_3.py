@@ -104,7 +104,7 @@ class Huffman_Coding:
 
 if __name__ == "__main__":
     huffman_coding = Huffman_Coding()
-
+    #Testing 
     print("**** Test \n")
     a_great_sentence = "The bird is the word"
 
@@ -121,4 +121,36 @@ if __name__ == "__main__":
     print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
     print ("The content of the encoded data is: {}\n".format(decoded_data))
 
+    #Test 2 
+    print("**** Test 2 ****\nSingle Character\n")
+    test_sentence = "a"
 
+    print ("The size of the data is: {}\n".format(sys.getsizeof(test_sentence)))
+    print ("The content of the data is: {}\n".format(test_sentence))
+
+    encoded_data, tree = huffman_coding.encode(test_sentence)
+
+    print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print ("The content of the encoded data is: {}\n".format(encoded_data))
+
+    decoded_data = huffman_coding.decode(encoded_data, tree)
+
+    print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print ("The content of the encoded data is: {}\n".format(decoded_data))
+
+    #Test 3
+    print("**** Test 3 ****\nSingle Character Repeated\n")
+    test_sentence = "aaaaaaa"
+
+    print ("The size of the data is: {}\n".format(sys.getsizeof(test_sentence)))
+    print ("The content of the data is: {}\n".format(test_sentence))
+
+    encoded_data, tree = huffman_coding.encode(test_sentence)
+
+    print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print ("The content of the encoded data is: {}\n".format(encoded_data))
+
+    decoded_data = huffman_coding.decode(encoded_data, tree)
+
+    print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print ("The content of the encoded data is: {}\n".format(decoded_data))
