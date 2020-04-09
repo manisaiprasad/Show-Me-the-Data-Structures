@@ -9,3 +9,7 @@ Time complexity of union: O(n) Reason: The function has three independent loops 
 
 Time complexity of intersection: O(n) Reason: The function loops n times
 
+Space complexity of union: O(n) Reason: Each variable in the list is allocated to a new variable
+
+Space complexity of intersection: O(n) Reason: Each variable in the list is allocated to a new variable
+

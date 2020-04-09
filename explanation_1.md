@@ -7,3 +7,7 @@ The time complexity of get() is O(1) Reason: No loops, constant time
 
 The time complexity of set() is O(1) Reason: No loops, constant time
 
+The space complexity of get() is O(1) Reason: Only one variable is allocated
+
+The space complexity of set() is O(n) Reason: The dictionary is as large as the amount fo keys
+
