@@ -41,36 +41,48 @@ class LinkedList:
         return size
 
 def union(llist_1, llist_2):
-    llist_1_copy = llist_deepcopy(llist_1)
-    llist_2_copy = llist_deepcopy(llist_2)
-    node = llist_1_copy.head
-    if node is None:
-        return llist_2
-    while node.next:
-        node = node.next
-    node.next = llist_2_copy.head
-    return llist_1_copy
-    
+    # Your Solution Here
+    _set = set()
+    _current = llist_1.head
+    while _current:
+        _set.add(_current.value)
+        _current = _current.next
+    _current = llist_2.head
+    while _current:
+        _set.add(_current.value)
+        _current = _current.next
+
+    result = LinkedList()
+    for num in _set:
+        result.append(num)
+    return result
+
 
 def intersection(llist_1, llist_2):
-    intersection = LinkedList()
-    node = llist_1.head
-    list1_dict = {}
-    while node:
-        if not node.value in list1_dict:
-            list1_dict[node.value] = 0
-        list1_dict[node.value] += 1
-        node = node.next
-    node = llist_2.head
-    while node:
-        if node.value in list1_dict:
-            new_node = Node(node.value)
-            intersection.append(new_node)
-            list1_dict[node.value] -= 1
-            if list1_dict[node.value] == 0:
-                del list1_dict[node.value]
-        node = node.next
-    return intersection
+    # Your Solution Here
+    _set1 = set()
+    _current = llist_1.head
+    while _current:
+        _set1.add(_current.value)
+        _current = _current.next
+
+    _set2 = set()
+    _current = llist_2.head
+    while _current:
+        _set2.add(_current.value)
+        _current = _current.next
+
+    _temp_list = sorted([_set1, _set2], key=len)
+    _set = set()
+
+    for s1 in _temp_list[0]:
+        if s1 in _temp_list[1]:
+            _set.add(s1)
+
+    result = LinkedList()
+    for num in _set:
+        result.append(num)
+    return result
 
 def llist_deepcopy(llist):
     new_list = LinkedList()
