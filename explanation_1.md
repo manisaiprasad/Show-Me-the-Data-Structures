@@ -1,0 +1,9 @@
+# Problem 1: LRU Cache
+
+Used a hash map to store the cached values for instant retrieval of the node and value.
+I used a doubly linked list to keep track of the most recently used values and size. This allowed me to quickly set the head and pop that back for removal.
+
+The time complexity of get() is O(1) Reason: No loops, constant time
+
+The time complexity of set() is O(1) Reason: No loops, constant time
+
