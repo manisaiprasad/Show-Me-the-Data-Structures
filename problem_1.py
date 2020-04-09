@@ -63,6 +63,7 @@ class LRU_Cache(object):
 
         
 # Tests
+print("Test 1")       
 
 our_cache = LRU_Cache(5)
 
@@ -79,3 +80,33 @@ our_cache.set(5, 5)
 our_cache.set(6, 6)
 
 print(our_cache.get(3))      # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
+
+# Test 2
+
+our_cache = LRU_Cache(5)
+print("Test 2")       
+
+our_cache.set(1, 1);
+our_cache.set(2, 9);
+our_cache.set(3, 3);
+our_cache.set(4, 3);
+
+print(our_cache.get(1))       
+print(our_cache.get(2))       
+print(our_cache.get(9))      
+
+our_cache.set(5, 3) 
+our_cache.set(6, 6)
+
+print(our_cache.get(6))    
+
+# Test 3 no cache set
+
+our_cache = LRU_Cache(5)
+
+print("Test 3")       
+print(our_cache.get(1))       
+print(our_cache.get(2))   
+print(our_cache.get(9))      
+
+    
